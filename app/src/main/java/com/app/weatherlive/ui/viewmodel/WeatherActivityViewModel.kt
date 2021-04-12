@@ -19,8 +19,9 @@ class WeatherActivityViewModel @Inject constructor(
 
     private val TAG = javaClass.simpleName
 
-    private val wList: MutableLiveData<WeatherEntity> =
-        MutableLiveData<WeatherEntity>()
+    private val _wList: MutableLiveData<WeatherEntity> = MutableLiveData<WeatherEntity>()
+    val wList: LiveData<WeatherEntity>
+        get() = _wList
 
     fun fetchWeatherData(latitude: Double,
                          longitude: Double,
@@ -30,7 +31,7 @@ class WeatherActivityViewModel @Inject constructor(
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({ result ->
                 run {
-                    wList.value = result
+                    _wList.value = result
                 }
             }
             ) { error ->

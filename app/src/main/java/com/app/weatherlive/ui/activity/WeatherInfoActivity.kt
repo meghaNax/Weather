@@ -42,7 +42,7 @@ class WeatherInfoActivity : AppCompatActivity(), GPSLocationFetcher.GPSCoordinat
     }
 
     private fun observeWeather() {
-        weatherActivityActivityViewModel.fetchWeatherList().observe(this, Observer{it.hourly?.let {list->liveWeatherAdapter.updateList(list)}})
+        weatherActivityActivityViewModel.wList.observe(this, Observer{it.hourly?.let {list->liveWeatherAdapter.updateList(list)}})
     }
 
     override fun loadLatLong(lattitude: Double, longitude: Double) {
