@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Live Weather</string>
+    <string name="txt_loading">loading</string>
+    <string name="txt_temp">%s F</string>
+    <string name="txt_temperature">Temp:</string>
+    <string name="txt_humidity">Humidity:</string>
+    <string name="txt_wind_speed">Wind Speed:</string>
+    <string name="txt_hour">Hour:</string>
+</resources>
